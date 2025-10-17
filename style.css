@@ -1,0 +1,49 @@
+/* Using Inter font for the whole site */
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* --- Animations --- */
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing cursor animation for home page */
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.25rem;
+    background-color: #60A5FA; /* blue-400 */
+    animation: blink 0.7s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Styles for blog category filter buttons */
+.category-btn {
+    transition: all 0.2s ease-in-out;
+    background-color: #374151; /* gray-700 */
+    color: #D1D5DB; /* gray-300 */
+}
+.category-btn:hover {
+    background-color: #4B5563; /* gray-600 */
+}
+.category-btn.active {
+    background-color: #2563EB; /* blue-600 */
+    color: white;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    font-weight: bold;
+}
+
