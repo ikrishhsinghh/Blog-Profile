@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Krishna K Singh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <div class="container mx-auto max-w-5xl px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="text-2xl font-bold text-white">Krishna K Singh</a>
+                <div class="flex space-x-4 text-lg">
+                    <a href="index.html" class="text-gray-300 hover:text-blue-400 transition">Home</a>
+                    <a href="blog.html" class="text-blue-400 font-semibold border-b-2 border-blue-400">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="app-content" class="container mx-auto max-w-5xl px-4 py-12">
+        
+        <!-- Blog List View -->
+        <section id="posts-list-view">
+            <div class="text-center mb-12 fade-in-up">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">Articles & Insights</h1>
+                <p class="text-lg text-gray-400 mt-2">Welcome to my collection. Search, filter, and explore.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                <!-- Left Sidebar for Filters -->
+                <aside class="md:w-1/3 lg:w-1/4 fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="sticky top-24 space-y-6">
+                        <div class="p-4 bg-gray-800 border border-gray-700 rounded-lg shadow-md">
+                            <!-- Search Bar -->
+                            <div class="relative">
+                                <label for="search-input" class="sr-only">Search</label>
+                                <input type="search" id="search-input" placeholder="Search articles..." class="w-full p-3 pl-10 bg-gray-700 text-white border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                                <svg class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 bg-gray-800 border border-gray-700 rounded-lg shadow-md">
+                            <!-- Timeline Filters -->
+                            <h3 class="font-bold text-white mb-3">Filter by Timeline</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <label for="year-filter" class="block text-sm font-medium text-gray-400 mb-1">Year</label>
+                                    <select id="year-filter" class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500"></select>
+                                </div>
+                                <div>
+                                    <label for="month-filter" class="block text-sm font-medium text-gray-400 mb-1">Month</label>
+                                    <select id="month-filter" class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gray-800 border border-gray-700 rounded-lg shadow-md">
+                            <!-- Categories -->
+                            <h3 class="font-bold text-white mb-3">Filter by Category</h3>
+                            <div id="category-filters" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        
+                        <button id="reset-filters" class="w-full text-center py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition">Reset Filters</button>
+                    </div>
+                </aside>
+
+                <!-- Right side for Blog Posts -->
+                <section class="flex-1">
+                    <div id="posts-container" class="space-y-8"></div>
+                    <div id="no-results" class="text-center py-10 text-gray-500 hidden">
+                        <p class="text-2xl font-bold">No Results Found</p>
+                        <p>Try adjusting your search or filters.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Single Post View (Initially Hidden) -->
+        <section id="post-view" class="hidden max-w-3xl mx-auto">
+             <a href="#" id="back-to-posts" class="inline-flex items-center text-blue-400 font-semibold hover:underline mb-8 fade-in">
+                <svg class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                Back to All Articles
+            </a>
+            <article id="single-post-content" class="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg border border-gray-700 fade-in-up">
+                <!-- Full article content will be inserted here -->
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 mt-16 py-6">
+        <div class="container mx-auto max-w-5xl px-4 text-gray-400">
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-sm mb-4 sm:mb-0">&copy; 2025 Krishna K Singh. All rights reserved.</p>
+                <div class="flex items-center space-x-4 text-sm font-semibold">
+                     <a href="https://ikrishhsinghh.github.io/Portfolio/" target="_blank" class="hover:text-blue-400 transition">Portfolio</a>
+                     <span>|</span>
+                     <a href="https://www.linkedin.com/in/ikrishnasinghh/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+                     <span>|</span>
+                     <a href="https://github.com/ikrishhsinghh" target="_blank" class="hover:text-blue-400 transition">Github</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
