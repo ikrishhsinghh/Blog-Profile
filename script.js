@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>AI isn't coming for our jobs; it's empowering us to do our jobs better, faster, and with more creativity. By embracing tools like GPT models, we can unlock unprecedented levels of productivity, allowing us to focus on what truly matters – whether that's mastering a new skill, delivering groundbreaking projects, or simply having more time for ourselves.</p>
         <p>So, are you ready to transform your productivity and become an AI-powered powerhouse? The tools are at your fingertips.</p>
         <p class="mt-8">---</p>
-        <p><strong>What are your thoughts? How are you using AI to boost your productivity? Share your tips in the comments below!</strong></p>
+        <p><strong>What are your thoughts? How are you using AI to boost your productivity? Share your tips, let's connect through LinkedIn!</strong></p>
     `
 }
                       
@@ -271,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     blogPosts.sort((a, b) => b.date - a.date); // Sort by newest first
     renderPostsList(blogPosts);
 });
+
 
 
 
